@@ -1,30 +1,40 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="light scroll-smooth" dir="ltr">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8" />
+        <title>Hously - Tailwind CSS Real Estate Website Landing Page Template</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta content="Real Estate Website Landing Page" name="description" />
+        <meta content="Real Estate, buy, sell, Rent, tailwind Css" name="keywords" />
+        <meta name="author" content="Shreethemes" />
+        <meta name="website" content="https://shreethemes.in/" />
+        <meta name="email" content="support@shreethemes.in" />
+        <meta name="version" content="1.5.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <!-- favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico" />
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <!-- Css -->
+        <link href="{{asset('assets/libs/tiny-slider/tiny-slider.css')}}" rel="stylesheet">
+        <link href="{{asset('assets/libs/tobii/css/tobii.min.css')}}" rel="stylesheet">
+        <link href="{{asset('assets/libs/choices.js/public/assets/styles/choices.min.css')}}" rel="stylesheet">
+        <!-- Main Css -->
+        <link href="{{asset('assets/libs/@iconscout/unicons/css/line.css')}}" type="text/css" rel="stylesheet" />
+        <link href="{{asset('assets/libs/@mdi/font/css/materialdesignicons.min.css')}}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{{asset('assets/css/tailwind.min.css')}}">
 
-        <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
-                <a href="/" wire:navigate>
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
-            </div>
-        </div>
+    </head>
+
+    <body class="dark:bg-slate-900">
+        @include('layouts.partials.guest.header')
+
+        {{$slot}}
+
+        @include('layouts.partials.guest.footer')
+        @include('layouts.partials.guest.script')
     </body>
 </html>
