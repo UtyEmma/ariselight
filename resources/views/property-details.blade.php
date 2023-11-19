@@ -112,13 +112,8 @@
                                 </ul>
                             </div>
 
-                            <div class="flex">
-                                <div class="w-1/2 p-1">
-                                    <a href="#" class="w-full text-white bg-green-600 rounded-md btn hover:bg-green-700">Book Now</a>
-                                </div>
-                                <div class="w-1/2 p-1">
-                                    <a href="#" class="w-full text-white bg-green-600 rounded-md btn hover:bg-green-700">Offer Now</a>
-                                </div>
+                            <div class="p-6">
+                                <a href="#" class="w-full text-white bg-green-600 rounded-md btn hover:bg-green-700">Book Now</a>
                             </div>
                         </div>
 
