@@ -1,4 +1,4 @@
-<x-guest-layout title="About Us">
+<x-guest-layout :title="'About Us'">
     <section class="relative table w-full py-32 bg-center bg-no-repeat bg-cover lg:py-36" style="background-image: url({{asset('assets/images/about.jpg')}})">
         <div class="absolute inset-0 bg-black opacity-80"></div>
         <div class="container">
@@ -21,12 +21,14 @@
                 <div class="md:col-span-5">
                     <div class="relative">
                         <img src="assets/images/about.jpg" class="shadow-md rounded-xl" alt="">
-                        <div class="absolute text-center bottom-2/4 translate-y-2/4 start-0 end-0">
-                            <a href="#!" data-type="youtube" data-id="yba7hPeTSjk"
-                                class="inline-flex items-center justify-center w-20 h-20 text-green-600 bg-white rounded-full shadow-md lightbox dark:shadow-gyay-700 dark:bg-slate-900">
-                                <i class="inline-flex items-center justify-center text-2xl mdi mdi-play"></i>
-                            </a>
-                        </div>
+                        @if ($settings->site_video)
+                            <div class="absolute text-center bottom-2/4 translate-y-2/4 start-0 end-0">
+                                <a href="{{$settings->site_video->value}}" data-type="youtube" data-id="yba7hPeTSjk"
+                                    class="inline-flex items-center justify-center w-20 h-20 text-green-600 bg-white rounded-full shadow-md lightbox dark:shadow-gyay-700 dark:bg-slate-900">
+                                    <i class="inline-flex items-center justify-center text-2xl mdi mdi-play"></i>
+                                </a>
+                            </div>
+                        @endif
                     </div>
                 </div><!--end col-->
 

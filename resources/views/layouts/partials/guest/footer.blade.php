@@ -27,7 +27,7 @@
                         </div>
                     </div> --}}
 
-                    <div class="grid grid-cols-1 md:grid-cols-3">
+                    <div class="grid grid-cols-1 md:grid-cols-3 md:gap-x-20">
                         <div >
                             <a href="#" class="text-[22px] focus:outline-none">
                                 <img src="assets/images/logo-light.png" alt="">
@@ -83,14 +83,23 @@
                 </div>
 
                 <ul class="text-center list-none ltr:md:text-right rtl:md:text-left">
-                    @if($settings->linkedin)
-                        <li class="inline"><a href="{{$settings->linkedin->value}}" target="_blank" class="text-gray-400 border border-gray-800 rounded-md btn btn-icon btn-sm hover:text-white dark:border-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="linkedin" class="w-4 h-4"></i></a></li>
+                    @if($settings->linkedin_link)
+                        <li class="inline"><a href="{{$settings->linkedin_link->value}}" target="_blank" class="text-gray-400 border border-gray-800 rounded-md btn btn-icon btn-sm hover:text-white dark:border-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="linkedin" class="w-4 h-4"></i></a></li>
                     @endif
-                    <li class="inline"><a href="https://www.facebook.com/shreethemes" target="_blank" class="text-gray-400 border border-gray-800 rounded-md btn btn-icon btn-sm hover:text-white dark:border-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="facebook" class="w-4 h-4"></i></a></li>
-                    <li class="inline"><a href="https://www.instagram.com/shreethemes/" target="_blank" class="text-gray-400 border border-gray-800 rounded-md btn btn-icon btn-sm hover:text-white dark:border-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="instagram" class="w-4 h-4"></i></a></li>
-                    <li class="inline"><a href="https://twitter.com/shreethemes" target="_blank" class="text-gray-400 border border-gray-800 rounded-md btn btn-icon btn-sm hover:text-white dark:border-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="twitter" class="w-4 h-4"></i></a></li>
-                    <li class="inline"><a href="mailto:support@shreethemes.in" class="text-gray-400 border border-gray-800 rounded-md btn btn-icon btn-sm hover:text-white dark:border-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="mail" class="w-4 h-4"></i></a></li>
-                    <li class="inline"><a href="https://forms.gle/QkTueCikDGqJnbky9" target="_blank" class="text-gray-400 border border-gray-800 rounded-md btn btn-icon btn-sm hover:text-white dark:border-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="file-text" class="w-4 h-4"></i></a></li>
+
+                    @if ($settings->facebook_link)
+                        <li class="inline"><a href="{{$settings->facebook_link->value}}" target="_blank" class="text-gray-400 border border-gray-800 rounded-md btn btn-icon btn-sm hover:text-white dark:border-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="facebook" class="w-4 h-4"></i></a></li>
+                    @endif
+
+                    @if ($settings->instagram_link)
+                        <li class="inline"><a href="{{$settings->instagram_link->value}}" target="_blank" class="text-gray-400 border border-gray-800 rounded-md btn btn-icon btn-sm hover:text-white dark:border-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="instagram" class="w-4 h-4"></i></a></li>
+                    @endif
+                    @if ($settings->twitter_link)
+                        <li class="inline"><a href="{{$settings->twitter_link->value}}" target="_blank" class="text-gray-400 border border-gray-800 rounded-md btn btn-icon btn-sm hover:text-white dark:border-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="twitter" class="w-4 h-4"></i></a></li>
+                    @endif
+                    @if ($settings->site_email)
+                        <li class="inline"><a href="mailto:{{$settings->site_email->vaue}}" class="text-gray-400 border border-gray-800 rounded-md btn btn-icon btn-sm hover:text-white dark:border-gray-700 hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="mail" class="w-4 h-4"></i></a></li>
+                    @endif
                 </ul><!--end icon-->
             </div><!--end grid-->
         </div><!--end container-->

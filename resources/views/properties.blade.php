@@ -1,4 +1,4 @@
-<x-guest-layout nav title="Properties">
+<x-guest-layout nav :title="'Properties'">
     <section class="relative table w-full py-48 bg-center bg-no-repeat bg-cover lg:py-48" style="background-image: url('{{asset('assets/images/bg/02.jpg')}}')">
         <div class="absolute inset-0 bg-black opacity-80"></div>
         <div class="container">
@@ -28,6 +28,16 @@
                 @forelse ($properties as $property)
                     <x-property.item :property="$property" />
                 @empty
+                    <div class="col-span-full">
+                        <div class="flex flex-col justify-center px-4 py-5 md:px-10">
+                            <div class="my-auto text-center title-heading">
+                                {{-- <img src="assets/images/error.png" class="mx-auto" alt=""> --}}
+                                <h1 class="mt-3 mb-6 text-3xl font-bold md:text-4xl">There are no properties found?</h1>
+                                <p class="text-slate-400">We couldn't find any properties at the moment. <br> Please try again later!</p>
+                                {{-- <br> Looks like the page you were looking for wasn't found. --}}
+                            </div>
+                        </div>
+                    </div>
                 @endforelse
             </div>
 

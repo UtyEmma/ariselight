@@ -1,4 +1,4 @@
-<x-guest-layout title="Contact Us">
+<x-guest-layout :title="'Contact Us'">
     <section class="relative table w-full py-32 bg-center bg-no-repeat bg-cover lg:py-36" style="background-image: url({{asset('assets/images/about.jpg')}})">
         <div class="absolute inset-0 bg-black opacity-80"></div>
         <div class="container">
@@ -26,6 +26,17 @@
                     <div class="lg:me-5">
                         <div class="p-6 bg-white rounded-md shadow dark:bg-slate-900 dark:shadow-gray-700">
                             <h3 class="mb-6 text-2xl font-medium leading-normal">Get in touch !</h3>
+
+                            @if (session()->has('error') || session()->has('success'))
+                                <div class="pb-3">
+                                    @if (session()->has('error'))
+                                        <p class="text-red-600">{{session()->get('error')}}</p>
+                                    @endif
+                                    @if (session()->has('success'))
+                                        <p class="text-green-600">{{session()->get('success')}}</p>
+                                    @endif
+                                </div>
+                            @endif
 
                             <form method="POST" action="{{route('contact.send')}}">
                                 @csrf
@@ -59,12 +70,12 @@
                                     </div>
                                 </div>
 
-                                @if (session('error') || session('success'))
-                                    <div class="py-3">
-                                        @if (session('error'))
-                                            <p class="text-red-600">{{session()->get('success')}}</p>
+                                @if (session()->has('error') || session()->has('success'))
+                                    <div class="pb-3">
+                                        @if (session()->has('error'))
+                                            <p class="text-red-600">{{session()->get('error')}}</p>
                                         @endif
-                                        @if (session('success'))
+                                        @if (session()->has('success'))
                                             <p class="text-green-600">{{session()->get('success')}}</p>
                                         @endif
                                     </div>

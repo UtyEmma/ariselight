@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class MessagesController extends Controller {
 
     function send(Request $request){
+        // dd($request->all());
         $validated = $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|email',

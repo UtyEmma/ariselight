@@ -1,4 +1,4 @@
-<x-guest-layout title="Home">
+<x-guest-layout :title="'Home'">
     <section class="relative mt-20">
         <div class="mx-2 container-fluid md:mx-4">
             <div class="relative table w-full pt-40 overflow-hidden bg-center bg-cover shadow-md pb-52 rounded-2xl" style="background-image: url({{asset('assets/images/bg/02.jpg')}});">
@@ -28,12 +28,14 @@
                 <div class="md:col-span-5">
                     <div class="relative">
                         <img src="assets/images/about.jpg" class="shadow-md rounded-xl" alt="">
-                        <div class="absolute text-center bottom-2/4 translate-y-2/4 start-0 end-0">
-                            <a href="#!" data-type="youtube" data-id="yba7hPeTSjk"
-                                class="inline-flex items-center justify-center w-20 h-20 text-green-600 bg-white rounded-full shadow-md lightbox dark:shadow-gyay-700 dark:bg-slate-900">
-                                <i class="inline-flex items-center justify-center text-2xl mdi mdi-play"></i>
-                            </a>
-                        </div>
+                        @if ($settings->site_video)
+                            <div class="absolute text-center bottom-2/4 translate-y-2/4 start-0 end-0">
+                                <a href="{{$settings->site_video->value}}" data-type="youtube" data-id="yba7hPeTSjk"
+                                    class="inline-flex items-center justify-center w-20 h-20 text-green-600 bg-white rounded-full shadow-md lightbox dark:shadow-gyay-700 dark:bg-slate-900">
+                                    <i class="inline-flex items-center justify-center text-2xl mdi mdi-play"></i>
+                                </a>
+                            </div>
+                        @endif
                     </div>
                 </div>
 
@@ -43,7 +45,7 @@
                         <p class="max-w-xl text-slate-400">Hously developed a platform for the Real Estate marketplace that allows buyers and sellers to easily execute a transaction on their own. The platform drives efficiency, cost transparency and control into the hands of the consumers. Hously is Real Estate Redefined.</p>
 
                         <div class="mt-4">
-                            <a href="#" class="mt-3 text-white bg-green-600 rounded-md btn hover:bg-green-700">Learn More </a>
+                            <a href="{{route('about')}}" class="mt-3 text-white bg-green-600 rounded-md btn hover:bg-green-700">Learn More </a>
                         </div>
                     </div>
                 </div><!--end col-->
@@ -108,20 +110,22 @@
             </div><!--end grid-->
         </div>
 
-        <div class="container mt-16 lg:mt-24">
-            <div class="grid grid-cols-1 pb-8 text-center">
-                <h3 class="mb-4 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">Featured Properties</h3>
+        @if (count($properties) > 0)
+            <div class="container mt-16 lg:mt-24">
+                <div class="grid grid-cols-1 pb-8 text-center">
+                    <h3 class="mb-4 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">Featured Properties</h3>
 
-                <p class="max-w-xl mx-auto text-slate-400">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
-            </div><!--end grid-->
+                    <p class="max-w-xl mx-auto text-slate-400">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
+                </div><!--end grid-->
 
-            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">
-                @forelse ($properties as $property)
-                    <x-property.item :property="$property" />
-                @empty
-                @endforelse
-            </div><!--en grid-->
-        </div><!--end container-->
+                <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">
+                    @forelse ($properties as $property)
+                        <x-property.item :property="$property" />
+                    @empty
+                    @endforelse
+                </div><!--en grid-->
+            </div>
+        @endif
 
         @include('partials.testimonials')
 
