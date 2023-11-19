@@ -1,9 +1,9 @@
-<x-guest-layout>
+<x-guest-layout title="Contact Us">
     <section class="relative table w-full py-32 bg-center bg-no-repeat bg-cover lg:py-36" style="background-image: url({{asset('assets/images/about.jpg')}})">
         <div class="absolute inset-0 bg-black opacity-80"></div>
         <div class="container">
             <div class="grid grid-cols-1 mt-10 text-center">
-                <h3 class="text-3xl font-medium leading-normal text-white md:text-4xl md:leading-normal">About Us</h3>
+                <h3 class="text-3xl font-medium leading-normal text-white md:text-4xl md:leading-normal">Contact Us</h3>
             </div><!--end grid-->
         </div><!--end container-->
     </section><!--end section-->
@@ -27,34 +27,52 @@
                         <div class="p-6 bg-white rounded-md shadow dark:bg-slate-900 dark:shadow-gray-700">
                             <h3 class="mb-6 text-2xl font-medium leading-normal">Get in touch !</h3>
 
-                            <form method="post" name="myForm" id="myForm" onsubmit="return validateForm()">
+                            <form method="POST" action="{{route('contact.send')}}">
+                                @csrf
                                 <p class="mb-0" id="error-msg"></p>
                                 <div id="simple-msg"></div>
                                 <div class="grid lg:grid-cols-12 lg:gap-6">
                                     <div class="mb-5 lg:col-span-6">
                                         <label for="name" class="font-medium">Your Name:</label>
-                                        <input name="name" id="name" type="text" class="mt-2 form-input" placeholder="Name :">
+                                        <input name="name" type="text" class="mt-2 form-input" placeholder="Name">
+                                        <x-input.error key="name" />
                                     </div>
 
                                     <div class="mb-5 lg:col-span-6">
                                         <label for="email" class="font-medium">Your Email:</label>
-                                        <input name="email" id="email" type="email" class="mt-2 form-input" placeholder="Email :">
+                                        <input name="email" type="email" class="mt-2 form-input" placeholder="Email">
+                                        <x-input.error key="email" />
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-1">
                                     <div class="mb-5">
                                         <label for="subject" class="font-medium">Your Question:</label>
-                                        <input name="subject" id="subject" class="mt-2 form-input" placeholder="Subject :">
+                                        <input name="subject" class="mt-2 form-input" placeholder="Subject">
+                                        <x-input.error key="subject" />
                                     </div>
 
                                     <div class="mb-5">
-                                        <label for="comments" class="font-medium">Your Comment:</label>
-                                        <textarea name="comments" id="comments" class="mt-2 form-input textarea" placeholder="Message :"></textarea>
+                                        <label for="comments" class="font-medium">Your Message:</label>
+                                        <textarea name="message" class="mt-2 form-input textarea" placeholder="Message"></textarea>
+                                        <x-input.error key="message" />
                                     </div>
                                 </div>
-                                <button type="submit" id="submit" name="send" class="text-white bg-green-600 rounded-md btn hover:bg-green-700">Send Message</button>
-                            </form>
+
+                                @if (session('error') || session('success'))
+                                    <div class="py-3">
+                                        @if (session('error'))
+                                            <p class="text-red-600">{{session()->get('success')}}</p>
+                                        @endif
+                                        @if (session('success'))
+                                            <p class="text-green-600">{{session()->get('success')}}</p>
+                                        @endif
+                                    </div>
+                                @endif
+                                <button type="submit" class="space-x-3 text-white bg-green-600 rounded-md btn hover:bg-green-700">Send Message</button>
+                                {{-- <x-spinner wire:loading wire:trigger='send' /> --}}
+                            </div>
+
                         </div>
                     </div>
                 </div>

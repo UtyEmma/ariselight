@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\Route;
@@ -17,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
-Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::prefix('contact')->group(function(){
+    Route::get('/', [PageController::class, 'contact'])->name('contact');
+    Route::post('/', [MessagesController::class, 'send'])->name('contact.send');
+});
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

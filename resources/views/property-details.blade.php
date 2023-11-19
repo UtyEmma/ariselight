@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guest-layout title="{{$property->title}}">
     <section class="relative pb-16 mt-20 md:pb-24">
         <div class="container-fluid">
             <style>

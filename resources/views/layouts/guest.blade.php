@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="light scroll-smooth" dir="ltr">
     <head>
         <meta charset="UTF-8" />
-        <title>Hously - Tailwind CSS Real Estate Website Landing Page Template</title>
+        <title>{{$title ?? ''}} - {{$settings->site_title->value}}</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta content="Real Estate Website Landing Page" name="description" />
@@ -36,5 +36,7 @@
 
         @include('layouts.partials.guest.footer')
         @include('layouts.partials.guest.script')
+
+        @livewireScripts
     </body>
 </html>

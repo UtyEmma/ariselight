@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guest-layout title="Home">
     <section class="relative mt-20">
         <div class="mx-2 container-fluid md:mx-4">
             <div class="relative table w-full pt-40 overflow-hidden bg-center bg-cover shadow-md pb-52 rounded-2xl" style="background-image: url({{asset('assets/images/bg/02.jpg')}});">

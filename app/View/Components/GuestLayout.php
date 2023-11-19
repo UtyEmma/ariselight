@@ -7,9 +7,14 @@ use Illuminate\View\View;
 
 class GuestLayout extends Component
 {
-    /**
-     * Get the view / contents that represents the component.
-     */
+
+    function __construct(
+        public string $title = ''
+    )
+    {
+
+    }
+
     public function render(): View
     {
         return view('layouts.guest');

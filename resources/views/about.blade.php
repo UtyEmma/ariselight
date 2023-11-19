@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guest-layout title="About Us">
     <section class="relative table w-full py-32 bg-center bg-no-repeat bg-cover lg:py-36" style="background-image: url({{asset('assets/images/about.jpg')}})">
         <div class="absolute inset-0 bg-black opacity-80"></div>
         <div class="container">

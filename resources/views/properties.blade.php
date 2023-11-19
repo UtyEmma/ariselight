@@ -1,4 +1,4 @@
-<x-guest-layout nav>
+<x-guest-layout nav title="Properties">
     <section class="relative table w-full py-48 bg-center bg-no-repeat bg-cover lg:py-48" style="background-image: url('{{asset('assets/images/bg/02.jpg')}}')">
         <div class="absolute inset-0 bg-black opacity-80"></div>
         <div class="container">
