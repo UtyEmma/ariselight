@@ -30,15 +30,32 @@ class PropertyResource extends Resource
                         ->schema([
                             Forms\Components\TextInput::make('title')
                                 ->maxLength(255)
+                                ->placeholder("Property Name")
+                                ->label('Property Name')
                                 ->columnSpanFull(),
                             Forms\Components\RichEditor::make('description')
                                 ->maxLength(65535)
+                                ->placeholder("Property Description")
+                                ->label('Property Description')
                                 ->columnSpanFull(),
-                            Forms\Components\TextInput::make('duration')
-                                ->maxLength(255),
-                            Forms\Components\TextInput::make('type')
-                                ->maxLength(255),
+                            Forms\Components\Select::make('type')
+                                ->options([
+                                    'For Sale' => "For Sale",
+                                    'For Rent' => "For Rent"
+                                ])
+                                ->label('Property Type')
+                                ->native(false),
+                            Forms\Components\Select::make('duration')
+                                ->options([
+                                    'monthly' => "Monthly",
+                                    'yearly' => "Yearly"
+                                ])
+                                ->label('Tenancy Duration')
+                                ->native(false),
                             Forms\Components\TextInput::make('price')
+                                ->numeric()
+                                ->label("Price (N)")
+                                ->placeholder('Price')
                                 ->maxLength(255),
                         ]),
 
@@ -46,21 +63,28 @@ class PropertyResource extends Resource
                     ->columns(3)
                     ->schema([
                         Forms\Components\TextInput::make('address')
+                            ->placeholder('Address')
                             ->maxLength(255)
                             ->columnSpanFull(),
-                        Forms\Components\TextInput::make('state')
-                            ->maxLength(255),
                         Forms\Components\TextInput::make('city')
+                            ->placeholder('City')
                             ->maxLength(255),
-                        Forms\Components\TextInput::make('landmark')
+                        Forms\Components\TextInput::make('state')
+                            ->placeholder('State')
                             ->maxLength(255),
                         Forms\Components\TextInput::make('no_bedrooms')
+                            ->numeric()
+                            ->placeholder('No. of Bedrooms')
                             ->maxLength(255)
                             ->numeric(),
                         Forms\Components\TextInput::make('no_bathrooms')
+                            ->numeric()
+                            ->placeholder('No. of Bathrooms')
                             ->maxLength(255)
                             ->numeric(),
                         Forms\Components\TextInput::make('no_floors')
+                            ->placeholder('No. of Floors')
+                            ->numeric()
                             ->maxLength(255),
                 ]),
 
@@ -85,6 +109,7 @@ class PropertyResource extends Resource
                                 Status::ACTIVE->value => Status::ACTIVE->value,
                                 Status::INACTIVE->value => Status::INACTIVE->value
                             ])
+                            ->searchable()
                             ->label('Availability Status')
                             ->native(false),
                         Forms\Components\Toggle::make('sold')
@@ -92,12 +117,6 @@ class PropertyResource extends Resource
                             ->inline(false)
                             ->required(),
                 ]),
-
-                // Forms\Components\Textarea::make('extra_info')
-                //     ->maxLength(65535)
-                //     ->columnSpanFull(),
-                // Forms\Components\TextInput::make('valid_till')
-                //     ->maxLength(255),
             ]);
     }
 
@@ -105,11 +124,7 @@ class PropertyResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('title')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('duration')
                     ->searchable(),
@@ -117,29 +132,7 @@ class PropertyResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('price')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('agency_fee')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('initial_fees')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('no_bedrooms')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('no_bathrooms')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('no_floors')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('status')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('video')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('address')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('state')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('city')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('landmark')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('valid_till')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('reviews')
                     ->searchable(),

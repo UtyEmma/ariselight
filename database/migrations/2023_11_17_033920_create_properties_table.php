@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('no_floors')->nullable();
             $table->string('status')->nullable();
             $table->text('images')->nullable();
+            $table->string('image')->nullable();
             $table->string('video')->nullable();
             $table->string('address')->nullable();
             $table->string('state')->nullable();
