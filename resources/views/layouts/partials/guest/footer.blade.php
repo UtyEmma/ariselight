@@ -3,34 +3,10 @@
         <div class="grid grid-cols-1">
             <div class="relative py-16">
                 <div class="relative w-full">
-                    {{-- <div class="relative px-6 py-10 overflow-hidden bg-white shadow-lg -top-40 dark:bg-slate-900 lg:px-8 rounded-xl dark:shadow-gray-700">
-                        <div class="grid md:grid-cols-2 grid-cols-1 items-center gap-[30px]">
-                            <div class="text-center ltr:md:text-left rtl:md:text-right z-1">
-                                <h3 class="text-2xl font-medium leading-normal text-black md:text-3xl md:leading-normal dark:text-white">Subscribe to Newsletter!</h3>
-                                <p class="max-w-xl mx-auto text-slate-400">Subscribe to get latest updates and information.</p>
-                            </div>
-
-                            <div class="subcribe-form z-1">
-                                <form class="relative max-w-lg md:ms-auto">
-                                    <input type="email" id="subcribe" name="email" class="bg-white rounded-full shadow dark:bg-slate-900 dark:shadow-gray-700" placeholder="Enter your email :">
-                                    <button type="submit" class="text-white bg-green-600 rounded-full btn hover:bg-green-700">Subscribe</button>
-                                </form><!--end form-->
-                            </div>
-                        </div>
-
-                        <div class="absolute -top-5 -start-5">
-                            <div class="uil uil-envelope lg:text-[150px] text-7xl text-black/5 dark:text-white/5 ltr:-rotate-45 rtl:rotate-45"></div>
-                        </div>
-
-                        <div class="absolute -bottom-5 -end-5">
-                            <div class="uil uil-pen lg:text-[150px] text-7xl text-black/5 dark:text-white/5 rtl:-rotate-90"></div>
-                        </div>
-                    </div> --}}
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 md:gap-x-20">
-                        <div >
-                            <a href="#" class="text-[22px] focus:outline-none">
-                                <img src="assets/images/logo-light.png" alt="">
+                    <div class="grid grid-cols-1 md:grid-cols-4 md:gap-10">
+                        <div  class="md:col-span-2">
+                            <a href="{{route('home')}}" class="text-[22px] focus:outline-none">
+                                <img src="/assets/images/logo-light.png" alt="">
                             </a>
                             <p class="mt-6 text-gray-300">{{$settings->description?->value}}</p>
 
