@@ -10,6 +10,7 @@ use Filament\Forms;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Support\RawJs;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -53,8 +54,11 @@ class PropertyResource extends Resource
                                 ->label('Tenancy Duration')
                                 ->native(false),
                             Forms\Components\TextInput::make('price')
-                                ->numeric()
-                                ->label("Price (N)")
+                                ->prefix('₦')
+                                ->label("Price")
+                                ->mask(RawJs::make(<<<'JS'
+                                    $money($input)
+                                JS))
                                 ->placeholder('Price')
                                 ->maxLength(255),
                         ]),
@@ -95,9 +99,8 @@ class PropertyResource extends Resource
                     Forms\Components\FileUpload::make('images')
                         ->multiple()
                         ->columnSpanFull(),
-                    Forms\Components\TextInput::make('video')
+                    Forms\Components\Textarea::make('video')
                         ->placeholder("Video link ")
-                        ->maxLength(255)
                         ->columnSpanFull(),
                 ]),
 

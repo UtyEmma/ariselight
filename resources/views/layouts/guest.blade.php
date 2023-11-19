@@ -24,7 +24,7 @@
         <link href="{{asset('assets/libs/@iconscout/unicons/css/line.css')}}" type="text/css" rel="stylesheet" />
         <link href="{{asset('assets/libs/@mdi/font/css/materialdesignicons.min.css')}}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{{asset('assets/css/tailwind.min.css')}}">
-
+        <script src="{{asset('assets/alpine.js')}}" defer></script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     </head>

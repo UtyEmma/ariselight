@@ -14,7 +14,7 @@ class CreateProperty extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array{
         $data['slug'] = implode('-', [time(), str($data['title'])->slug()]);
-        dd($data);
+        // dd($data);
         return $data;
     }
 }

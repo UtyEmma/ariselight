@@ -1,7 +1,7 @@
 <div
     class="overflow-hidden duration-500 ease-in-out bg-white shadow group rounded-xl dark:bg-slate-900 hover:shadow-xl dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700">
     <div class="relative">
-        <img src="{{$property->image}}" alt="">
+        <img src="{{asset('storage/'.$property->image)}}" alt="">
 
         {{-- <div class="absolute top-4 end-4">
             <a href="javascript:void(0)"
@@ -40,7 +40,7 @@
         <ul class="flex items-center justify-between list-none">
             <li>
                 <span class="mb-0 leading-tight text-slate-400">Price</span>
-                <p class="text-lg font-medium"><x-naira />{{number_format($property->price)}}</p>
+                <p class="text-lg font-medium"><x-naira />{{$property->price}}</p>
             </li>
 
             {{-- <li>

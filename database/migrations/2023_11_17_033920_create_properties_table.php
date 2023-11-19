@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->text('images')->nullable();
             $table->string('image')->nullable();
-            $table->string('video')->nullable();
+            $table->text('video')->nullable();
             $table->string('address')->nullable();
             $table->string('state')->nullable();
             $table->string('city')->nullable();
