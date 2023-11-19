@@ -32,8 +32,20 @@ return [
         'value' => '+234 812 660 9669'
     ],
 
+    'site_video' => [
+        'slug' => 'site_video',
+        'name' => 'Youtube Video Link',
+        'value' => 'https://'
+    ],
+
     'seo_description' => [
         'slug' => 'seo_description',
+        'name' => 'SEO Description',
+        'value' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    ],
+
+    'description' => [
+        'slug' => 'description',
         'name' => 'SEO Description',
         'value' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     ],
@@ -41,10 +53,7 @@ return [
     'seo_tags' => [
         'slug' => 'seo_tags',
         'name' => 'SEO Tags',
-        'value' => json_encode([
-            ['value' => 'Job Description'],
-            ['value' => 'Job Description'],
-        ])
+        'value' => 'dsd,sdsd,sdsd,sdsd,sdsd'
     ],
 
     'twitter_link' => [

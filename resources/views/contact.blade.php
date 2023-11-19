@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <section class="relative table w-full py-32 lg:py-36 bg-[url('../../assets/images/bg/01.html')] bg-no-repeat bg-center bg-cover">
+    <section class="relative table w-full py-32 bg-center bg-no-repeat bg-cover lg:py-36" style="background-image: url({{asset('assets/images/about.jpg')}})">
         <div class="absolute inset-0 bg-black opacity-80"></div>
         <div class="container">
             <div class="grid grid-cols-1 mt-10 text-center">
@@ -73,10 +73,8 @@
 
                     <div class="content mt-7">
                         <h5 class="text-xl font-medium title h5">Phone</h5>
-                        <p class="mt-3 text-slate-400">The phrasal sequence of the is now so that many campaign and benefit</p>
-
-                        <div class="mt-5">
-                            <a href="tel:+152534-468-854" class="text-green-600 transition duration-500 btn btn-link hover:text-green-600 after:bg-green-600">+152 534-468-854</a>
+                        <div class="mt-3">
+                            <a href="tel:{{$settings->contact_phone?->value}}contact_phone" class="text-green-600 transition duration-500 btn btn-link hover:text-green-600 after:bg-green-600">{{$settings->contact_phone?->value}}</a>
                         </div>
                     </div>
                 </div>
@@ -91,10 +89,8 @@
 
                     <div class="content mt-7">
                         <h5 class="text-xl font-medium title h5">Email</h5>
-                        <p class="mt-3 text-slate-400">The phrasal sequence of the is now so that many campaign and benefit</p>
-
-                        <div class="mt-5">
-                            <a href="mailto:contact@example.com" class="text-green-600 transition duration-500 btn btn-link hover:text-green-600 after:bg-green-600">contact@example.com</a>
+                        <div class="mt-3">
+                            <a href="mailto:{{$settings->site_email?->value}}" class="text-green-600 transition duration-500 btn btn-link hover:text-green-600 after:bg-green-600">{{$settings->site_email?->value}}</a>
                         </div>
                     </div>
                 </div>
@@ -109,12 +105,7 @@
 
                     <div class="content mt-7">
                         <h5 class="text-xl font-medium title h5">Location</h5>
-                        <p class="mt-3 text-slate-400">C/54 Northwest Freeway, Suite 558, <br> Houston, USA 485</p>
-
-                        <div class="mt-5">
-                            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin"
-                            data-type="iframe" class="text-green-600 transition duration-500 video-play-icon read-more lightbox btn btn-link hover:text-green-600 after:bg-green-600">View on Google map</a>
-                        </div>
+                        <p class="mt-3 text-slate-400">{{$settings->contact_address?->value}}</p>
                     </div>
                 </div>
             </div><!--end grid-->

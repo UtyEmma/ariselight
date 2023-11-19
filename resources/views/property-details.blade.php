@@ -112,7 +112,7 @@
                                 </ul>
                             </div>
 
-                            <div class="p-6">
+                            <div class="p-6 pt-0">
                                 <a href="#" class="w-full text-white bg-green-600 rounded-md btn hover:bg-green-700">Book Now</a>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <section class="relative table w-full py-32 lg:py-36 bg-[url('../../assets/images/bg/01.html')] bg-no-repeat bg-center bg-cover">
+    <section class="relative table w-full py-32 bg-center bg-no-repeat bg-cover lg:py-36" style="background-image: url({{asset('assets/images/about.jpg')}})">
         <div class="absolute inset-0 bg-black opacity-80"></div>
         <div class="container">
             <div class="grid grid-cols-1 mt-10 text-center">
@@ -36,7 +36,7 @@
                         <p class="max-w-xl text-slate-400">Hously developed a platform for the Real Estate marketplace that allows buyers and sellers to easily execute a transaction on their own. The platform drives efficiency, cost transparency and control into the hands of the consumers. Hously is Real Estate Redefined.</p>
 
                         <div class="mt-4">
-                            <a href="#" class="mt-3 text-white bg-green-600 rounded-md btn hover:bg-green-700">Learn More </a>
+                            <a href="{{route('properties')}}" class="mt-3 text-white bg-green-600 rounded-md btn hover:bg-green-700">Find Properties </a>
                         </div>
                     </div>
                 </div><!--end col-->
@@ -126,239 +126,15 @@
                         <div class="text-center counter-box">
                             <h1 class="mb-2 text-4xl font-semibold text-white lg:text-5xl"><span class="counter-value" data-target="9">0</span>+</h1>
                             <h5 class="text-lg font-medium text-white counter-head">Years Experience</h5>
-                        </div><!--end counter box-->
+                        </div>
                     </div>
                 </div>
-            </div><!--end grid-->
-        </div><!--end container-->
-    </section><!--end section-->
-    <!-- End CTA -->
+            </div>
+        </div>
+    </section>
 
-    <!-- Start -->
     <section class="relative py-16 lg:py-24">
-        <div class="container">
-            <div class="grid grid-cols-1 pb-8 text-center">
-                <h3 class="mb-4 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">Meet The Agent Team</h3>
-
-                <p class="max-w-xl mx-auto text-slate-400">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
-            </div><!--end grid-->
-
-            <div class="grid md:grid-cols-12 grid-cols-1 mt-8 gap-[30px]">
-                <div class="lg:col-span-3 md:col-span-6">
-                    <div class="text-center group">
-                        <div class="relative inline-block mx-auto overflow-hidden rounded-full h-52 w-52">
-                            <img src="assets/images/client/04.jpg" class="" alt="">
-                            <div class="absolute inset-0 transition-all duration-500 ease-in-out rounded-full opacity-0 bg-gradient-to-b from-transparent to-black h-52 w-52 group-hover:opacity-100"></div>
-
-                            <ul class="absolute list-none transition-all duration-500 ease-in-out start-0 end-0 -bottom-20 group-hover:bottom-5">
-                                <li class="inline"><a href="#" class="text-white bg-green-600 border border-green-600 rounded-full btn btn-icon btn-sm hover:border-green-600 hover:bg-green-600"><i data-feather="facebook" class="w-4 h-4"></i></a></li>
-                                <li class="inline"><a href="#" class="text-white bg-green-600 border border-green-600 rounded-full btn btn-icon btn-sm hover:border-green-600 hover:bg-green-600"><i data-feather="instagram" class="w-4 h-4"></i></a></li>
-                                <li class="inline"><a href="#" class="text-white bg-green-600 border border-green-600 rounded-full btn btn-icon btn-sm hover:border-green-600 hover:bg-green-600"><i data-feather="linkedin" class="w-4 h-4"></i></a></li>
-                            </ul><!--end icon-->
-                        </div>
-
-                        <div class="mt-3 content">
-                            <a href="#" class="text-xl font-medium transition-all duration-500 ease-in-out hover:text-green-600">Jack John</a>
-                            <p class="text-slate-400">Designer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-3 md:col-span-6">
-                    <div class="text-center group">
-                        <div class="relative inline-block mx-auto overflow-hidden rounded-full h-52 w-52">
-                            <img src="assets/images/client/05.jpg" class="" alt="">
-                            <div class="absolute inset-0 transition-all duration-500 ease-in-out rounded-full opacity-0 bg-gradient-to-b from-transparent to-black h-52 w-52 group-hover:opacity-100"></div>
-
-                            <ul class="absolute list-none transition-all duration-500 ease-in-out start-0 end-0 -bottom-20 group-hover:bottom-5">
-                                <li class="inline"><a href="#" class="text-white bg-green-600 border border-green-600 rounded-full btn btn-icon btn-sm hover:border-green-600 hover:bg-green-600"><i data-feather="facebook" class="w-4 h-4"></i></a></li>
-                                <li class="inline"><a href="#" class="text-white bg-green-600 border border-green-600 rounded-full btn btn-icon btn-sm hover:border-green-600 hover:bg-green-600"><i data-feather="instagram" class="w-4 h-4"></i></a></li>
-                                <li class="inline"><a href="#" class="text-white bg-green-600 border border-green-600 rounded-full btn btn-icon btn-sm hover:border-green-600 hover:bg-green-600"><i data-feather="linkedin" class="w-4 h-4"></i></a></li>
-                            </ul><!--end icon-->
-                        </div>
-
-                        <div class="mt-3 content">
-                            <a href="#" class="text-xl font-medium transition-all duration-500 ease-in-out hover:text-green-600">Krista John</a>
-                            <p class="text-slate-400">Designer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-3 md:col-span-6">
-                    <div class="text-center group">
-                        <div class="relative inline-block mx-auto overflow-hidden rounded-full h-52 w-52">
-                            <img src="assets/images/client/06.jpg" class="" alt="">
-                            <div class="absolute inset-0 transition-all duration-500 ease-in-out rounded-full opacity-0 bg-gradient-to-b from-transparent to-black h-52 w-52 group-hover:opacity-100"></div>
-
-                            <ul class="absolute list-none transition-all duration-500 ease-in-out start-0 end-0 -bottom-20 group-hover:bottom-5">
-                                <li class="inline"><a href="#" class="text-white bg-green-600 border border-green-600 rounded-full btn btn-icon btn-sm hover:border-green-600 hover:bg-green-600"><i data-feather="facebook" class="w-4 h-4"></i></a></li>
-                                <li class="inline"><a href="#" class="text-white bg-green-600 border border-green-600 rounded-full btn btn-icon btn-sm hover:border-green-600 hover:bg-green-600"><i data-feather="instagram" class="w-4 h-4"></i></a></li>
-                                <li class="inline"><a href="#" class="text-white bg-green-600 border border-green-600 rounded-full btn btn-icon btn-sm hover:border-green-600 hover:bg-green-600"><i data-feather="linkedin" class="w-4 h-4"></i></a></li>
-                            </ul><!--end icon-->
-                        </div>
-
-                        <div class="mt-3 content">
-                            <a href="#" class="text-xl font-medium transition-all duration-500 ease-in-out hover:text-green-600">Roger Jackson</a>
-                            <p class="text-slate-400">Designer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-3 md:col-span-6">
-                    <div class="text-center group">
-                        <div class="relative inline-block mx-auto overflow-hidden rounded-full h-52 w-52">
-                            <img src="assets/images/client/07.jpg" class="" alt="">
-                            <div class="absolute inset-0 transition-all duration-500 ease-in-out rounded-full opacity-0 bg-gradient-to-b from-transparent to-black h-52 w-52 group-hover:opacity-100"></div>
-
-                            <ul class="absolute list-none transition-all duration-500 ease-in-out start-0 end-0 -bottom-20 group-hover:bottom-5">
-                                <li class="inline"><a href="#" class="text-white bg-green-600 border border-green-600 rounded-full btn btn-icon btn-sm hover:border-green-600 hover:bg-green-600"><i data-feather="facebook" class="w-4 h-4"></i></a></li>
-                                <li class="inline"><a href="#" class="text-white bg-green-600 border border-green-600 rounded-full btn btn-icon btn-sm hover:border-green-600 hover:bg-green-600"><i data-feather="instagram" class="w-4 h-4"></i></a></li>
-                                <li class="inline"><a href="#" class="text-white bg-green-600 border border-green-600 rounded-full btn btn-icon btn-sm hover:border-green-600 hover:bg-green-600"><i data-feather="linkedin" class="w-4 h-4"></i></a></li>
-                            </ul><!--end icon-->
-                        </div>
-
-                        <div class="mt-3 content">
-                            <a href="#" class="text-xl font-medium transition-all duration-500 ease-in-out hover:text-green-600">Johnny English</a>
-                            <p class="text-slate-400">Designer</p>
-                        </div>
-                    </div>
-                </div>
-            </div><!--end grid-->
-        </div><!--end container-->
-
-        <div class="container mt-16 lg:mt-24">
-            <div class="grid grid-cols-1 pb-8 text-center">
-                <h3 class="mb-4 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">What Our Client Say ?</h3>
-
-                <p class="max-w-xl mx-auto text-slate-400">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
-            </div><!--end grid-->
-
-            <div class="relative flex justify-center mt-8">
-                <div class="relative w-full">
-                    <div class="tiny-three-item">
-                        <div class="tiny-slide">
-                            <div class="mx-3 text-center">
-                                <p class="text-lg italic text-slate-400"> " Hously made the processes so easy. Hously instantly increased the amount of interest and ultimately saved us over $10,000. " </p>
-
-                                <div class="mt-5 text-center">
-                                    <ul class="mb-2 text-xl font-medium list-none text-amber-400">
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                    </ul>
-
-                                    <img src="assets/images/client/01.jpg" class="mx-auto rounded-full shadow-md h-14 w-14 dark:shadow-gray-700" alt="">
-                                    <h6 class="mt-2 fw-semibold">Christa Smith</h6>
-                                    <span class="text-sm text-slate-400">Manager</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tiny-slide">
-                            <div class="mx-3 text-center">
-                                <p class="text-lg italic text-slate-400"> " I highly recommend Hously as the new way to sell your home "by owner". My home sold in 24 hours for the asking price. Best $400 you could spend to sell your home. " </p>
-
-                                <div class="mt-5 text-center">
-                                    <ul class="mb-2 text-xl font-medium list-none text-amber-400">
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                    </ul>
-
-                                    <img src="assets/images/client/02.jpg" class="mx-auto rounded-full shadow-md h-14 w-14 dark:shadow-gray-700" alt="">
-                                    <h6 class="mt-2 fw-semibold">Christa Smith</h6>
-                                    <span class="text-sm text-slate-400">Manager</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tiny-slide">
-                            <div class="mx-3 text-center">
-                                <p class="text-lg italic text-slate-400"> " My favorite part about selling my home myself was that we got to meet and get to know the people personally. This made it so much more enjoyable! " </p>
-
-                                <div class="mt-5 text-center">
-                                    <ul class="mb-2 text-xl font-medium list-none text-amber-400">
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                    </ul>
-
-                                    <img src="assets/images/client/03.jpg" class="mx-auto rounded-full shadow-md h-14 w-14 dark:shadow-gray-700" alt="">
-                                    <h6 class="mt-2 fw-semibold">Christa Smith</h6>
-                                    <span class="text-sm text-slate-400">Manager</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tiny-slide">
-                            <div class="mx-3 text-center">
-                                <p class="text-lg italic text-slate-400"> " Great experience all around! Easy to use and efficient. " </p>
-
-                                <div class="mt-5 text-center">
-                                    <ul class="mb-2 text-xl font-medium list-none text-amber-400">
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                    </ul>
-
-                                    <img src="assets/images/client/04.jpg" class="mx-auto rounded-full shadow-md h-14 w-14 dark:shadow-gray-700" alt="">
-                                    <h6 class="mt-2 fw-semibold">Christa Smith</h6>
-                                    <span class="text-sm text-slate-400">Manager</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tiny-slide">
-                            <div class="mx-3 text-center">
-                                <p class="text-lg italic text-slate-400"> " Hously made selling my home easy and stress free. They went above and beyond what is expected. " </p>
-
-                                <div class="mt-5 text-center">
-                                    <ul class="mb-2 text-xl font-medium list-none text-amber-400">
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                    </ul>
-
-                                    <img src="assets/images/client/05.jpg" class="mx-auto rounded-full shadow-md h-14 w-14 dark:shadow-gray-700" alt="">
-                                    <h6 class="mt-2 fw-semibold">Christa Smith</h6>
-                                    <span class="text-sm text-slate-400">Manager</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tiny-slide">
-                            <div class="mx-3 text-center">
-                                <p class="text-lg italic text-slate-400"> " Hously is fair priced, quick to respond, and easy to use. I highly recommend their services! " </p>
-
-                                <div class="mt-5 text-center">
-                                    <ul class="mb-2 text-xl font-medium list-none text-amber-400">
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                        <li class="inline"><i class="mdi mdi-star"></i></li>
-                                    </ul>
-
-                                    <img src="assets/images/client/06.jpg" class="mx-auto rounded-full shadow-md h-14 w-14 dark:shadow-gray-700" alt="">
-                                    <h6 class="mt-2 fw-semibold">Christa Smith</h6>
-                                    <span class="text-sm text-slate-400">Manager</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--end grid-->
-        </div><!--end container-->
+        @include('partials.testimonials')
 
         <div class="container mt-16 lg:mt-24">
             <div class="grid grid-cols-1 text-center">
@@ -369,7 +145,7 @@
                 <div class="mt-6">
                     <a href="contact.html" class="text-white bg-green-600 rounded-md btn hover:bg-green-700"><i class="align-middle uil uil-phone me-2"></i> Contact us</a>
                 </div>
-            </div><!--end grid-->
-        </div><!--end container-->
+            </div>
+        </div>
     </section>
 </x-guest-layout>
