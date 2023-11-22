@@ -2,7 +2,7 @@
     <div class="container">
         <!-- Logo container-->
         <a class="logo" href="{{route('home')}}">
-            <img src="assets/images/logo.png" class="inline-block max-w-[100px]" alt="{{env('APP_NAME')}}">
+            <img src="/assets/images/logo.png" class="inline-block max-w-[100px]" alt="{{env('APP_NAME')}}">
         </a>
 
         <div class="menu-extras">

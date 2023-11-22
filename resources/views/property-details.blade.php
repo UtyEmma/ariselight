@@ -1,5 +1,16 @@
 <x-guest-layout :title="$property->title">
-    <section class="relative pb-16 mt-20 md:pb-24">
+    <style>
+        .aspect-square{
+            aspect-ratio: 1 / 1
+        }
+
+        @media (min-width: 768px){
+              .md\:aspect-video{
+                aspect-ratio: 16 / 9
+              }
+        }
+    </style>
+    <section class="relative pb-16 md:pb-24">
         <div class="container-fluid">
             <style>
                 .tns-outer button{
@@ -7,22 +18,38 @@
                 }
             </style>
             <div class="flex-row items-center mt-4 overflow-x-auto md:flex flex-nowrap" x-data="{
-                data: @js([$property->image, ...$property->images])
-            }" x-init="
-                tns({
-                    container: $el,
-                    items: 2,
-                    slideBy: 1,
-                    autoplay: true,
-                    arrowKeys: true,
-                    navPosition: 'bottom',
-                    autoplayButton: false,
+                data: @js([$property->image, ...$property->images]),
+                width: 0,
+                setSlider: () => {
+                    width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
-                });
-            ">
+                    if (width > 550 && data.length < 3) {
+
+                    }else{
+                        tns({
+                            container: $el,
+                            items: 1,
+                            slideBy: 1,
+                            autoplay: true,
+                            arrowKeys: true,
+                            navPosition: 'bottom',
+                            autoplayButton: false,
+                            loop: true,
+                             responsive: {
+                              640: {
+                                items: 2
+                              },
+                            }
+
+                        });
+                    }
+                }
+            }" x-init="
+                setSlider()
+            " @resize.window="setSlider()">
                 <div class="">
-                    <div class="relative overflow-hidden group">
-                        <img src="{{asset('storage/'.$property->image)}}" class="object-cover w-100 h-100 aspect-video" alt="">
+                    <div class="relative overflow-hidden group aspect-square md:aspect-video">
+                        <img src="{{asset('storage/'.$property->image)}}" class="object-cover w-100 h-100 " alt="">
                         <div class="absolute inset-0 duration-500 ease-in-out group-hover:bg-slate-900/70"></div>
                         <div class="absolute invisible text-center -translate-y-1/2 top-1/2 start-0 end-0 group-hover:visible">
                             <a href="{{asset('storage/'.$property->image)}}" class="text-white bg-green-600 rounded-full btn btn-icon hover:bg-green-700 lightbox"><i class="uil uil-camera"></i></a>
@@ -31,8 +58,8 @@
                 </div>
                 @forelse ($property->images as $image)
                     <div class="">
-                        <div class="relative overflow-hidden group">
-                            <img src="{{asset('storage/'.$image)}}" class="object-cover w-100 h-100 aspect-video" alt="">
+                        <div class="relative overflow-hidden group aspect-square md:aspect-video">
+                            <img src="{{asset('storage/'.$image)}}" class="object-cover w-100 h-100 aspect-square md:aspect-video" alt="">
                             <div class="absolute inset-0 duration-500 ease-in-out group-hover:bg-slate-900/70"></div>
                             <div class="absolute invisible text-center -translate-y-1/2 top-1/2 start-0 end-0 group-hover:visible">
                                 <a href="{{asset('storage/'.$image)}}" class="text-white bg-green-600 rounded-full btn btn-icon hover:bg-green-700 lightbox"><i class="uil uil-camera"></i></a>
@@ -117,7 +144,7 @@
                             </div>
 
                             <div class="p-6 pt-0">
-                                <a href="#" class="w-full text-white bg-green-600 rounded-md btn hover:bg-green-700">Book Now</a>
+                                <a href="#" class="w-full text-white bg-green-600 rounded-md btn hover:bg-green-700">Get in touch with us</a>
                             </div>
                         </div>
 

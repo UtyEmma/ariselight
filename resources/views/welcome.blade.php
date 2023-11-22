@@ -49,7 +49,7 @@
                 <div class="md:col-span-6">
                     <div class="lg:ms-4">
                         <h4 class="mb-6 text-2xl font-semibold leading-normal md:text-3xl lg:leading-normal">Discover Your Next Home with <br/> {{env('APP_NAME')}}</h4>
-                        <p class="max-w-xl text-slate-400 mb-5">Arise Light is a premier real estate agency dedicated to guiding our clients through the complexities of the real estate market. With years of experience and a commitment to personalized service, we've helped countless individuals, families, and investors achieve their real estate goals.</p>
+                        <p class="max-w-xl mb-5 text-slate-400">Arise Light is a premier real estate agency dedicated to guiding our clients through the complexities of the real estate market. With years of experience and a commitment to personalized service, we've helped countless individuals, families, and investors achieve their real estate goals.</p>
                         <p class="max-w-xl text-slate-400">At Arise Light, we illuminate your path to the perfect property. We understand that finding the ideal home or investment property involves more than just square footage and amenities—it's about finding a place where your dreams and aspirations can flourish.</p>
 
                         <div class="mt-4">
@@ -67,7 +67,7 @@
                 <div class="grid grid-cols-1 pb-8 text-center">
                     <h3 class="mb-4 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">Featured Properties</h3>
 
-                    <p class="max-w-xl mx-auto text-slate-400">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
+                    <p class="max-w-xl mx-auto text-slate-400">Find a property that fits into your ideal lifestyle <br/> and investment goals.</p>
                 </div><!--end grid-->
 
                 <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">
