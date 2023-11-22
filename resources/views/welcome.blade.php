@@ -11,8 +11,8 @@
                 <div class="container">
                     <div class="grid grid-cols-1">
                         <div class="text-center ltr:md:text-left rtl:md:text-right">
-                            <h1 class="mb-6 text-3xl font-bold leading-normal text-white md:text-4xl lg:leading-normal lg:text-5xl">We will help you find <br> your <span class="text-green-600">Wonderful</span> home</h1>
-                            <p class="max-w-xl text-lg text-white md:text-xl">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
+                            <h1 class="mb-6 text-3xl font-bold leading-normal text-white md:text-4xl lg:leading-normal lg:text-5xl">Discover Enugu's Premier <br> Real Estate with <span class="text-green-600">Arise Light.</span> </h1>
+                            <p class="max-w-xl text-lg text-white md:text-xl">We are your trusted partner for finding homes, estates, and lucrative property Investments in Enugu State.</p>
                         </div>
                     </div>
                 </div>
