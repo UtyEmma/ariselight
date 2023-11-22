@@ -17,7 +17,7 @@
 
     <section class="relative py-16 lg:py-24">
         <div class="container">
-            <div class="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
+            <div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
                 <div class="md:col-span-5">
                     <div class="relative">
                         <img src="{{asset('assets/images/ceo.jpg')}}" class="shadow-md rounded-xl" alt="">
@@ -26,11 +26,12 @@
 
                 <div class="md:col-span-7">
                     <div class="lg:ms-4">
-                        <h4 class="mb-6 text-2xl font-semibold leading-normal md:text-3xl lg:leading-normal">Efficiency. Transparency. <br> Control.</h4>
-                        <p class="max-w-xl text-slate-400">Hously developed a platform for the Real Estate marketplace that allows buyers and sellers to easily execute a transaction on their own. The platform drives efficiency, cost transparency and control into the hands of the consumers. Hously is Real Estate Redefined.</p>
+                        <h4 class="mb-6 text-2xl font-semibold leading-normal md:text-3xl lg:leading-normal">Expert Guidance Tailored for You.</h4>
+                        <p class="max-w-xl text-slate-400 mb-5">Navigating the real estate market can be daunting, but with Arise Light, it becomes a seamless journey. Our agents bring not only years of industry experience but also a deep understanding of local markets. We walk you through each property, providing comprehensive insights, discussing market trends, and addressing any questions you may have. From the initial consultation to the final closing, our commitment to personalized service ensures that you're not just finding a property; you're discovering a place where memories will be made, where dreams will unfold, and where your investment will thrive. Trust us to be your unwavering partner in your real estate endeavors.</p>
+                        <p class="max-w-xl text-slate-400">We believe in transparency, integrity, and exceeding expectations. Our core values serve as the guiding light in every interaction and transaction. We understand that real estate is not just about transactions; it's about relationships and trust. Whether you're seeking a cozy family home where laughter fills the halls, a luxurious estate that exudes elegance, or a strategic investment opportunity that promises future prosperity, our team of seasoned experts is dedicated to guiding you every step of the way. We prioritize understanding your unique needs, ensuring that each property recommendation aligns with your vision and goals.</p>
 
                         <div class="mt-6">
-                            <p class="max-w-xl text-slate-400">John Doe</p>
+                            <p class="max-w-xl text-slate-400">{{env('CEO_NAME')}}</p>
                             <p class="max-w-xl font-semibold">CEO Arise Light</p>
                         </div>
 
@@ -42,63 +43,7 @@
             </div><!--end grid-->
         </div><!--end container-->
 
-        <div class="container mt-16 lg:mt-24">
-            <div class="grid grid-cols-1 pb-8 text-center">
-                <h3 class="mb-4 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">How It Works</h3>
-
-                <p class="max-w-xl mx-auto text-slate-400">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
-            </div><!--end grid-->
-
-            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">
-                <!-- Content -->
-                <div class="relative overflow-hidden text-center transition-all duration-500 ease-in-out bg-transparent group lg:px-10 rounded-xl">
-                    <div class="relative -m-3 overflow-hidden text-transparent">
-                        <i data-feather="hexagon" class="w-32 h-32 mx-auto fill-green-600/5"></i>
-                        <div class="absolute flex items-center justify-center mx-auto text-4xl text-green-600 align-middle transition-all duration-500 ease-in-out top-2/4 -translate-y-2/4 start-0 end-0 rounded-xl">
-                            <i class="uil uil-estate"></i>
-                        </div>
-                    </div>
-
-                    <div class="mt-6">
-                        <h5 class="text-xl font-medium">Evaluate Property</h5>
-                        <p class="mt-3 text-slate-400">If the distribution of letters and 'words' is random, the reader will not be distracted from making.</p>
-                    </div>
-                </div>
-                <!-- Content -->
-
-                <!-- Content -->
-                <div class="relative overflow-hidden text-center transition-all duration-500 ease-in-out bg-transparent group lg:px-10 rounded-xl">
-                    <div class="relative -m-3 overflow-hidden text-transparent">
-                        <i data-feather="hexagon" class="w-32 h-32 mx-auto fill-green-600/5"></i>
-                        <div class="absolute flex items-center justify-center mx-auto text-4xl text-green-600 align-middle transition-all duration-500 ease-in-out top-2/4 -translate-y-2/4 start-0 end-0 rounded-xl">
-                            <i class="uil uil-bag"></i>
-                        </div>
-                    </div>
-
-                    <div class="mt-6">
-                        <h5 class="text-xl font-medium">Meeting with Agent</h5>
-                        <p class="mt-3 text-slate-400">If the distribution of letters and 'words' is random, the reader will not be distracted from making.</p>
-                    </div>
-                </div>
-                <!-- Content -->
-
-                <!-- Content -->
-                <div class="relative overflow-hidden text-center transition-all duration-500 ease-in-out bg-transparent group lg:px-10 rounded-xl">
-                    <div class="relative -m-3 overflow-hidden text-transparent">
-                        <i data-feather="hexagon" class="w-32 h-32 mx-auto fill-green-600/5"></i>
-                        <div class="absolute flex items-center justify-center mx-auto text-4xl text-green-600 align-middle transition-all duration-500 ease-in-out top-2/4 -translate-y-2/4 start-0 end-0 rounded-xl">
-                            <i class="uil uil-key-skeleton"></i>
-                        </div>
-                    </div>
-
-                    <div class="mt-6">
-                        <h5 class="text-xl font-medium">Close the Deal</h5>
-                        <p class="mt-3 text-slate-400">If the distribution of letters and 'words' is random, the reader will not be distracted from making.</p>
-                    </div>
-                </div>
-                <!-- Content -->
-            </div><!--end grid-->
-        </div><!--end container-->
+        @include('partials.why-choose-us')
     </section><!--end section-->
     <!-- End -->
 
@@ -112,13 +57,13 @@
 
                         <div class="text-center counter-box">
                             <h1 class="mb-2 text-4xl font-semibold text-white lg:text-5xl"><span class="counter-value" data-target="1548">1010</span>+</h1>
-                            <h5 class="text-lg font-medium text-white counter-head">Properties Sell</h5>
+                            <h5 class="text-lg font-medium text-white counter-head">Properties Sold</h5>
                         </div><!--end counter box-->
 
 
                         <div class="text-center counter-box">
                             <h1 class="mb-2 text-4xl font-semibold text-white lg:text-5xl"><span class="counter-value" data-target="25">2</span>+</h1>
-                            <h5 class="text-lg font-medium text-white counter-head">Award Gained</h5>
+                            <h5 class="text-lg font-medium text-white counter-head">Clients</h5>
                         </div><!--end counter box-->
 
 
@@ -135,16 +80,6 @@
     <section class="relative py-16 lg:py-24">
         @include('partials.testimonials')
 
-        <div class="container mt-16 lg:mt-24">
-            <div class="grid grid-cols-1 text-center">
-                <h3 class="mb-6 text-2xl font-medium leading-normal text-black md:text-3xl md:leading-normal dark:text-white">Have Question ? Get in touch!</h3>
-
-                <p class="max-w-xl mx-auto text-slate-400">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
-
-                <div class="mt-6">
-                    <a href="{{route('about')}}" class="text-white bg-green-600 rounded-md btn hover:bg-green-700"><i class="align-middle uil uil-phone me-2"></i> Contact us</a>
-                </div>
-            </div>
-        </div>
+        @include('partials.cta')
     </section>
 </x-guest-layout>

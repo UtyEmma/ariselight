@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 pb-8 text-center">
             <h3 class="mb-4 text-2xl font-semibold leading-normal md:text-3xl md:leading-normal">What Our Client Say ?</h3>
 
-            <p class="max-w-xl mx-auto text-slate-400">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
+            <p class="max-w-xl mx-auto text-slate-400"> We are helping countless individuals, families, and investors achieve their real estate goals..</p>
         </div><!--end grid-->
 
         <div class="relative flex justify-center mt-16">
