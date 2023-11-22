@@ -5,10 +5,12 @@
                 <div class="relative w-full">
                     <div class="grid grid-cols-1 md:grid-cols-4 md:gap-10">
                         <div  class="md:col-span-2">
-                            <a href="{{route('home')}}" class="text-[22px] focus:outline-none">
-                                <img src="/assets/images/logo-light.png" alt="">
+                            <a class="logo" href="{{route('home')}}">
                             </a>
-                            <p class="mt-6 text-gray-300">{{$settings->description?->value}}</p>
+                            <a href="{{route('home')}}" class="text-[22px] focus:outline-none ">
+                                <img src="assets/images/logo.png" class="inline-block max-w-[100px]" alt="{{env('APP_NAME')}}">
+                            </a>
+                            <p class="mt-3 text-gray-300">{{$settings->description?->value}}</p>
 
                         </div>
 
@@ -53,9 +55,9 @@
 
     <div class="py-[30px] px-0 border-t border-gray-800 dark:border-gray-700">
         <div class="container text-center">
-            <div class="grid items-center gap-6 md:grid-cols-2">
-                <div class="text-center ltr:md:text-left rtl:md:text-right">
-                    <p class="mb-0 text-gray-300">© <script>document.write(new Date().getFullYear())</script> {{$settings->site_title->value}}. Design with <i class="text-red-600 mdi mdi-heart"></i>.</p>
+            <div class="grid items-center gap-6 md:grid-cols-3">
+                <div class="col-span-2 text-center ltr:md:text-left rtl:md:text-right">
+                    <p class="mb-0 text-gray-300">© <script>document.write(new Date().getFullYear())</script> {{$settings->site_title->value}}. Built with <i class="text-red-600 mdi mdi-heart"></i> by <a href="https://grandscaledigital.com" target="__blank">Grandscale Digital</a>.</p>
                 </div>
 
                 <ul class="text-center list-none ltr:md:text-right rtl:md:text-left">

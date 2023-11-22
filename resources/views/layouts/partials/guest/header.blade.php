@@ -1,9 +1,8 @@
-<nav id="topnav" class="bg-white dark:bg-gray-800 defaultscroll is-sticky bg-opacity-80">
+<nav id="topnav" class="bg-white dark:bg-slate-900 defaultscroll is-sticky">
     <div class="container">
         <!-- Logo container-->
         <a class="logo" href="{{route('home')}}">
-            <img src="assets/images/logo-dark.png" class="inline-block dark:hidden" alt="">
-            <img src="assets/images/logo-light.png" class="hidden dark:inline-block" alt="">
+            <img src="assets/images/logo.png" class="inline-block max-w-[100px]" alt="{{env('APP_NAME')}}">
         </a>
 
         <div class="menu-extras">

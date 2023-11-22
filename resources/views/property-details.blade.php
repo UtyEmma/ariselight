@@ -89,12 +89,16 @@
                                 <h5 class="text-2xl font-medium">Price:</h5>
 
                                 <div class="flex items-center justify-between mt-4">
-                                    <span class="text-xl font-medium"><x-naira /> {{$property->price}}</span>
+                                    <span class="text-xl font-medium">
+                                        <x-naira /> {{$property->price}} @if ($property->duration)
+                                            /{{$property->duration}}
+                                        @endif
+                                    </span>
 
                                     <span class="bg-green-600/10 text-green-600 text-sm px-2.5 py-0.75 rounded h-6">{{$property->type}}</span>
                                 </div>
 
-                                <ul class="mt-4 list-none">
+                                {{-- <ul class="mt-4 list-none">
                                     <li class="flex items-center justify-between">
                                         <span class="text-sm text-slate-400">Days on Hously</span>
                                         <span class="text-sm font-medium">124 Days</span>
@@ -109,7 +113,7 @@
                                         <span class="text-sm text-slate-400">Monthly Payment (estimate)</span>
                                         <span class="text-sm font-medium">$ 1497/Monthly</span>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </div>
 
                             <div class="p-6 pt-0">

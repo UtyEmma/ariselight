@@ -32,7 +32,7 @@
                         <div class="flex flex-col justify-center px-4 py-5 md:px-10">
                             <div class="my-auto text-center title-heading">
                                 {{-- <img src="assets/images/error.png" class="mx-auto" alt=""> --}}
-                                <h1 class="mt-3 mb-6 text-3xl font-bold md:text-4xl">There are no properties found?</h1>
+                                <h1 class="mt-3 mb-6 text-3xl font-bold md:text-4xl">No properties found</h1>
                                 <p class="text-slate-400">We couldn't find any properties at the moment. <br> Please try again later!</p>
                                 {{-- <br> Looks like the page you were looking for wasn't found. --}}
                             </div>

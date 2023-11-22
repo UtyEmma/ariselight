@@ -5,16 +5,16 @@
         <title>{{$title ?? ''}} - {{$settings->site_title->value}}</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta content="Real Estate Website Landing Page" name="description" />
-        <meta content="Real Estate, buy, sell, Rent, tailwind Css" name="keywords" />
+        <meta content="{{$settings->seo_description->value}}" name="description" />
+        <meta content="{{$settings->seo_tags->value}}" name="keywords" />
         <meta name="author" content="Shreethemes" />
-        <meta name="website" content="https://shreethemes.in/" />
-        <meta name="email" content="support@shreethemes.in" />
+        <meta name="website" content="{{env('APP_DOMAIN')}}" />
+        <meta name="email" content="{{$settings->site_email->value}}" />
         <meta name="version" content="1.5.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico" />
+        <link rel="shortcut icon" href="{{asset('assets/images/icon.PNG')}}" />
 
         <!-- Css -->
         <link href="{{asset('assets/libs/tiny-slider/tiny-slider.css')}}" rel="stylesheet">

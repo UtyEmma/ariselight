@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Enums\Status;
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
@@ -36,10 +37,13 @@ class UserResource extends Resource
                 Forms\Components\TextInput::make('role')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('status')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\DateTimePicker::make('email_verified_at'),
+                Forms\Components\Select::make('status')
+                    ->options([
+                        Status::ACTIVE->value => Status::ACTIVE->value,
+                        Status::INACTIVE->value => Status::INACTIVE->value
+                    ])
+                    ->native(false)
+                    ->required(),
                 Forms\Components\TextInput::make('password')
                     ->password()
                     ->required()
@@ -51,8 +55,6 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('firstname')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('lastname')
@@ -63,14 +65,7 @@ class UserResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('status')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('email_verified_at')
-                    ->dateTime()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

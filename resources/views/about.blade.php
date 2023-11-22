@@ -20,15 +20,7 @@
             <div class="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
                 <div class="md:col-span-5">
                     <div class="relative">
-                        <img src="assets/images/about.jpg" class="shadow-md rounded-xl" alt="">
-                        @if ($settings->site_video)
-                            <div class="absolute text-center bottom-2/4 translate-y-2/4 start-0 end-0">
-                                <a href="{{$settings->site_video->value}}" data-type="youtube" data-id="yba7hPeTSjk"
-                                    class="inline-flex items-center justify-center w-20 h-20 text-green-600 bg-white rounded-full shadow-md lightbox dark:shadow-gyay-700 dark:bg-slate-900">
-                                    <i class="inline-flex items-center justify-center text-2xl mdi mdi-play"></i>
-                                </a>
-                            </div>
-                        @endif
+                        <img src="{{asset('assets/images/ceo.jpg')}}" class="shadow-md rounded-xl" alt="">
                     </div>
                 </div><!--end col-->
 
@@ -36,6 +28,11 @@
                     <div class="lg:ms-4">
                         <h4 class="mb-6 text-2xl font-semibold leading-normal md:text-3xl lg:leading-normal">Efficiency. Transparency. <br> Control.</h4>
                         <p class="max-w-xl text-slate-400">Hously developed a platform for the Real Estate marketplace that allows buyers and sellers to easily execute a transaction on their own. The platform drives efficiency, cost transparency and control into the hands of the consumers. Hously is Real Estate Redefined.</p>
+
+                        <div class="mt-6">
+                            <p class="max-w-xl text-slate-400">John Doe</p>
+                            <p class="max-w-xl font-semibold">CEO Arise Light</p>
+                        </div>
 
                         <div class="mt-4">
                             <a href="{{route('properties')}}" class="mt-3 text-white bg-green-600 rounded-md btn hover:bg-green-700">Find Properties </a>
@@ -106,8 +103,8 @@
     <!-- End -->
 
     <!-- Start CTA -->
-    <section class="relative py-24 bg-[url('../../assets/images/bg/01.html')] bg-no-repeat bg-center bg-fixed bg-cover">
-        <div class="absolute inset-0 bg-black/60"></div>
+    <section class="relative py-24 bg-fixed bg-center bg-no-repeat bg-cover" style="background-image: url('{{asset('assets/images/bg/02.jpg')}}');">
+        <div class="absolute inset-0 bg-black/75"></div>
         <div class="container">
             <div class="grid justify-center grid-cols-1 text-center lg:grid-cols-12 md:text-left">
                 <div class="lg:col-start-2 lg:col-span-10">

@@ -1,14 +1,18 @@
 <x-guest-layout :title="'Home'">
     <section class="relative mt-20">
         <div class="mx-2 container-fluid md:mx-4">
-            <div class="relative table w-full pt-40 overflow-hidden bg-center bg-cover shadow-md pb-52 rounded-2xl" style="background-image: url({{asset('assets/images/bg/02.jpg')}});">
-                <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative table w-full pt-40 overflow-hidden bg-center bg-cover shadow-md pb-52 rounded-2xl"
+            >
+                <div>
+                    <video src="{{asset('assets/videos/VID-20231121-WA0004.mp4')}}" loop autoplay muted class="absolute inset-0 object-cover h-full min-w-full"></video>
+                </div>
+                <div class="absolute inset-0 bg-black/75 overflow-clip"></div>
 
                 <div class="container">
                     <div class="grid grid-cols-1">
                         <div class="text-center ltr:md:text-left rtl:md:text-right">
-                            <h1 class="mb-6 text-4xl font-bold leading-normal text-white lg:leading-normal lg:text-5xl">We will help you find <br> your <span class="text-green-600">Wonderful</span> home</h1>
-                            <p class="max-w-xl text-xl text-white/70">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
+                            <h1 class="mb-6 text-3xl font-bold leading-normal text-white md:text-4xl lg:leading-normal lg:text-5xl">We will help you find <br> your <span class="text-green-600">Wonderful</span> home</h1>
+                            <p class="max-w-xl text-lg text-white md:text-xl">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
                         </div>
                     </div>
                 </div>
@@ -25,21 +29,24 @@
 
         <div class="container mt-16 lg:mt-24">
             <div class="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
-                <div class="md:col-span-5">
-                    <div class="relative">
-                        <img src="assets/images/about.jpg" class="shadow-md rounded-xl" alt="">
-                        @if ($settings->site_video)
-                            <div class="absolute text-center bottom-2/4 translate-y-2/4 start-0 end-0">
-                                <a href="{{$settings->site_video->value}}" data-type="youtube" data-id="yba7hPeTSjk"
-                                    class="inline-flex items-center justify-center w-20 h-20 text-green-600 bg-white rounded-full shadow-md lightbox dark:shadow-gyay-700 dark:bg-slate-900">
+                <div class="md:col-span-6">
+                    <div class="relative rounded-lg bg-green-600/10" x-data="{
+                        play: false,
+                        video: null
+                    }">
+                        {{-- <img src="assets/images/about.jpg" class="shadow-md rounded-xl" alt=""> --}}
+                        <video src="{{asset('assets/videos/VID-20231121-WA0005.mp4')}}" x-bind:autoplay="play" x-on:pause="play = false" x-on:play="play = true" controls x-ref="video" class="w-full rounded-md h-[30rem]"></video>
+                            <div x-show="play == false" class="absolute text-center bottom-2/4 translate-y-2/4 start-0 end-0">
+                                <button
+                                    x-on:click="$refs.video.play();"
+                                    class="inline-flex items-center justify-center w-20 h-20 text-green-600 bg-white rounded-full shadow-md dark:shadow-gyay-700 dark:bg-slate-900">
                                     <i class="inline-flex items-center justify-center text-2xl mdi mdi-play"></i>
-                                </a>
+                                </button>
                             </div>
-                        @endif
                     </div>
                 </div>
 
-                <div class="md:col-span-7">
+                <div class="md:col-span-6">
                     <div class="lg:ms-4">
                         <h4 class="mb-6 text-2xl font-semibold leading-normal md:text-3xl lg:leading-normal">Efficiency. Transparency. <br> Control.</h4>
                         <p class="max-w-xl text-slate-400">Hously developed a platform for the Real Estate marketplace that allows buyers and sellers to easily execute a transaction on their own. The platform drives efficiency, cost transparency and control into the hands of the consumers. Hously is Real Estate Redefined.</p>
@@ -136,7 +143,7 @@
                 <p class="max-w-xl mx-auto text-slate-400">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
 
                 <div class="mt-6">
-                    <a href="contact.html" class="text-white bg-green-600 rounded-md btn hover:bg-green-700"><i class="align-middle uil uil-phone me-2"></i> Contact us</a>
+                    <a href="{{route('contact')}}" class="text-white bg-green-600 rounded-md btn hover:bg-green-700"><i class="align-middle uil uil-phone me-2"></i> Contact us</a>
                 </div>
             </div><!--end grid-->
         </div><!--end container-->
