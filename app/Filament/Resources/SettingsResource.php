@@ -21,8 +21,7 @@ class SettingsResource extends Resource
 
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
+        return $form->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
